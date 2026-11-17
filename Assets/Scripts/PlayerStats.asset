@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   Speed: 10
-  turnSpeed: 180
+  DashAmount: 50
+  DashDuration: 0.1
+  JumpHeight: 5
