@@ -30,9 +30,14 @@ public class MeleeAttacks : MonoBehaviour
             foreach (Collider collider in hitColliders)
             {
                 IHitable hitable = collider.GetComponent<IHitable>();
+                IKnockbackable knockbackable = collider.GetComponent<IKnockbackable>();
                 if (hitable != null)
                 {
                     hitable.OnHit(_collider, attackData.damage);
+                }
+                if (knockbackable != null)
+                {
+                    knockbackable.OnHit(transform.forward, attackData.knockbackForce);
                 }
             }
         }
